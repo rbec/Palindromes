@@ -61,28 +61,29 @@ namespace Palindromes
         public static void TestPalindrome1()
         {
             var s = "sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop";
-            Assert.That(PalindromesManacher.LongestPalindromes(s, 3), Is.EquivalentTo(new[] {new Range(23, 10), new Range(13, 8), new Range(5, 6)}));
+            Assert.That(PalindromesManacher.AllPalindromes(s)
+                                           .OrderByDescending(range => range.Length)
+                                           .Take(3), Is.EquivalentTo(new[] {new Range(23, 10), new Range(13, 8), new Range(5, 6)}));
         }
 
         [Test]
         public static void TestPalindrome2()
         {
             var s = "";
-            Assert.That(PalindromesManacher.LongestPalindromes(s, 1), Is.Empty);
+            Assert.That(PalindromesManacher.LongestPalindromes(s), Is.EqualTo(new Range(0, 0)));
         }
 
         [Test]
         public static void TestPalindrome3()
         {
-            string s = null;
-            Assert.That(PalindromesManacher.LongestPalindromes(s, 1), Is.Empty);
+            Assert.Throws<ArgumentNullException>(() => PalindromesManacher.LongestPalindromes(null));
         }
 
         [Test]
         public static void TestPalindrome4()
         {
             var s = "AAAAAAAAAA";
-            Assert.That(PalindromesManacher.LongestPalindromes(s, 1), Is.EqualTo(new[] {new Range(0, 10)}));
+            Assert.That(PalindromesManacher.LongestPalindromes(s), Is.EqualTo(new Range(0, 10)));
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Palindromes
             for (var i = 0; i < 1000; i++)
             {
                 var s = GenerateString(random, random.Next(10), 100);
-                Assert.That(PalindromesManacher.Palindromes(s), Is.EquivalentTo(Palindromes(s)));
+                Assert.That(PalindromesManacher.AllPalindromes(s), Is.EquivalentTo(Palindromes(s)));
             }
         }
 

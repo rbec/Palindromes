@@ -14,17 +14,8 @@ namespace Palindromes
                     return;
                 Console.Write("# to find: ");
 
-                int n;
-                var nStr = Console.ReadLine();
-                while (!int.TryParse(nStr, out n) || n < 1)
-                {
-                    if (nStr == "q")
-                        return;
-                    Console.Write("Invalid number. Please enter again: ");
-                    nStr = Console.ReadLine();
-                }
 
-                foreach (var range in PalindromesManacher.LongestPalindromes(s, n))
+                foreach (var range in PalindromesManacher.AllPalindromes(s))
                 {
                     Console.WriteLine($"Text: {s.Substring(range.Index, range.Length)}, {range}");
                 }

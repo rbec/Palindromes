@@ -21,19 +21,23 @@ namespace Palindromes
             for (var i = 1; i < right.Length; i++)
             {
                 if (i < 2 * right[rightmost])
+                {
+                    // we are inside the rightmost palindrome so reuse knowledge of the
+                    // mirror palindrome about the centre of the rightmost palindrome
                     right[i] = Math.Min(right[rightmost], right[2 * rightmost - i] + i - rightmost);
+                }
                 else
-                    right[i] = i / 2;
+                    right[i] = i / 2; // we are outside the right most palindrome so start with immediate right
 
                 var left = i - right[i] - 1;
-                while (left >= 0 && right[i] < s.Length && s[left] == s[right[i]])
+                while (left >= 0 && right[i] < s.Length && s[left] == s[right[i]]) // grow the palindrome to the maximum extent
                 {
                     left--;
                     right[i]++;
                 }
 
                 if (right[i] > right[rightmost])
-                    rightmost = i;
+                    rightmost = i; // we have found a new rightmost palindrome
             }
 
             return right;

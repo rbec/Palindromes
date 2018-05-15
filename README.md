@@ -4,8 +4,5 @@ An implementation of [Manacher algorithm](https://en.wikipedia.org/wiki/Longest_
 
 A palindrome may be odd or even in length.
 * Even length palindroms have their centre *between* a pair of characters. e.g.
-|---|---|---|
 | A |   | B |
-|---|---|---|
 |   | ↑ |   |
-|---|---|---|

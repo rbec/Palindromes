@@ -36,3 +36,24 @@ And for a string of length ***n*** we have ***2n + 1*** indices.
 The algorithm accepts a string of length ***n*** and returns an array of length ***2n + 1*** with the index *j* containing the length of the palindrome centered at *j*.
 
 ### Example
+
+``` C#
+public static int[] Rights(string s)
+{
+    var rights = new int[s.Length * 2 + 1];
+
+    for (var i = 1; i < rights.Length; i++)
+    {
+        rights[i] = (i + 1) / 2;
+
+        var left = i - rights[i] - 1;
+        while (left >= 0 && rights[i] < s.Length && s[left] == s[rights[i]])
+        {
+            left--;
+            rights[i]++;
+        }
+    }
+
+    return rights;
+}
+```

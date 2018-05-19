@@ -25,7 +25,7 @@ A palindrome may be odd or even in length.
 |---|---|---|---|---|
 |   |   | ↑ |   |   |
 
-Let's define a unique index *j* for each possible palindrome in a string **S** with even length palindromes represented by even indices and odd length palindromes represented by odd indices. e.g. for a string of length 4 we have 9 indices:
+Let's define a unique index ***j*** for each possible palindrome in a string **S** with even length palindromes represented by even indices and odd length palindromes represented by odd indices. e.g. for a string of length 4 we have 9 indices:
 
 |   | S₀|   | S₁|   | S₂|   | S₃|   |
 |---|---|---|---|---|---|---|---|---|
@@ -33,7 +33,7 @@ Let's define a unique index *j* for each possible palindrome in a string **S** w
 
 And for a string of length ***n*** we have ***2n + 1*** indices.
 
-The algorithm accepts a string of length ***n*** and returns an array of length ***2n + 1*** with the index *j* containing the right-hand side of the palindrome centered at *j*.
+The algorithm accepts a string of length ***n*** and returns an array of length ***2n + 1*** with the index ***j*** containing the right-hand side of the palindrome centered at ***j***.
 
 ### Example
 Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so the output will an array of 19 integers. The grey boxes in the grid below show the palindromes centered at each index (labelled blue). The three columns on the right show the range of the grey box as indices (0 - 8) in the original string shown in red at the top. The algorithm will output the *right (ex)* column of numbers. This is an exclusive bound since it makes the arithmetic slightly simpler.
@@ -71,6 +71,6 @@ public static int[] Rights(string s)
 }
 ```
 ### Manacher's Algorithm
-Manacher's insight was that a palindrom whose centre at *i* is *within* another palindrome centred at *j* will have a mirror palindrome reflected about *i*.
+Manacher's insight was that a palindrome whose centre at ***i*** is *within* another palindrome centred at ***j*** will have a mirror palindrome reflected about ***i***.
 
-Since the algorithm works left to right, by the time we reach *i* we know that we are within a palindrome centered at *j* and hence that there is a palindrome at *i* that has the same length as the one centered at *2 j - i* (the mirror image of *i* about *j*).
+Since the algorithm works left to right, by the time we reach ***i*** we know that we are within a palindrome centered at ***j*** and hence that there is a palindrome at *i* that has the same length as the one centered at ***2 j - i*** (the mirror image of ***i*** about axis ***j***).

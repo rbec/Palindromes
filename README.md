@@ -40,7 +40,9 @@ Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so t
 
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example.PNG)
 
-### Simple Algorithm
+### Simple Approach
+
+#### Algorithm
 Move through the centres from left to right. For each centre `i`:
 * Initialise the right-hand side to the minimum it can be: `right[i] = (i + 1)/2`
   * Then `left = i - right[i]`
@@ -50,6 +52,7 @@ Move through the centres from left to right. For each centre `i`:
 
 This is **O**(***n²***).
 
+### Implementation
 ``` C#
 public static int[] Rights(string s)
 {
@@ -71,6 +74,21 @@ public static int[] Rights(string s)
 }
 ```
 ### Manacher's Algorithm
-Manacher's insight was that a palindrome whose centre at ***i*** is *within* another palindrome centred at ***j*** will have a mirror palindrome reflected about ***i***.
+Manacher's insight was that a palindrome whose centre at ***i*** is *within* another palindrome centred at ***j*** will have a mirror palindrome reflected about ***j***.
 
-Since the algorithm works left to right, by the time we reach ***i*** we know that we are within a palindrome centered at ***j*** and hence that there is a palindrome at *i* that has the same length as the one centered at ***2 j - i*** (the mirror image of ***i*** about axis ***j***).
+#### Example
+Since the algorithm works left to right, by the time we reach ***i*** we know that we are within a palindrome centred at ***j*** and hence that there is a palindrome at *i* that has the same length as the one centred at ***2 j - i*** (the mirror image of ***i*** about axis ***j***).
+
+![alt text](https://github.com/rbec/Palindromes/blob/master/mirror_example.PNG)
+
+It is possible that the palindrome extends further than it's mirror image, hence as before we can grow the palindrome to it's maximum extent, but starting with a better initial guess.
+
+We therefore need to keep track of the right-most palindrome so far discovered.
+
+#### Algorithm
+Initialise a variable `rightmost` to zero that is the centre of the palindrome with the right-most extent so far discovered.
+For each centre `i` staring from zero:
+*  If `i` is outside the right-most right-hand side (`2 * i >= right[rightmost]`)
+  * We know nothing about any palindromes centred at `i` so use the simple algorithm `right[i] = (i + 1)/2`
+  * 
+* Incrementally grow the palindrome using `left` and `right` to the maximum extent

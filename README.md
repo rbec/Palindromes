@@ -40,9 +40,9 @@ Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so t
 
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example.PNG)
 
-### Simple Approach
+## Simple Approach
 
-#### Algorithm
+### Algorithm
 Move through the centres from left to right. For each centre `i`:
 * Initialise the right-hand side to the minimum it can be: `right[i] = (i + 1)/2`
   * Then `left = i - right[i]`
@@ -52,7 +52,7 @@ Move through the centres from left to right. For each centre `i`:
 
 This is **O**(***n²***).
 
-#### Implementation
+### Implementation
 ``` C#
 public static int[] Rights(string s)
 {
@@ -73,10 +73,10 @@ public static int[] Rights(string s)
     return rights;
 }
 ```
-### Manacher's Approach
+## Manacher's Approach
 Manacher's insight was that a palindrome, whose centre at ***i*** is *within* another palindrome centred at ***j***, will have an identical mirror palindrome centred at ***i*** reflected about ***j***.
 
-#### Example
+### Example
 Since the algorithm works left to right, by the time we reach ***i*** we will know that we are within a palindrome centred at ***j*** and hence that there is a palindrome at ***i*** that has the same length as the one centred at ***2 j - i*** (the mirror image of ***i*** about ***j***).
 
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example_mirror.PNG)
@@ -85,7 +85,7 @@ It is possible that the palindrome extends further than it's mirror image, hence
 
 We therefore need to keep track of the right-most palindrome so far discovered.
 
-#### Algorithm
+### Algorithm
 Initialise a variable `rightmost` to zero that is the centre of the palindrome with the right-most extent so far discovered.
 For each centre `i` staring from zero:
 * Initialise our starting guess:
@@ -94,7 +94,9 @@ For each centre `i` staring from zero:
 * As before, incrementally grow the palindrome using `left` and `right` to the maximum extent
 * If this palindrome has a right-most extent is greater than the previous right-most palindrome, set `rightmost = i`
 
-#### Implementation
+This is **O**(***n***).
+
+### Implementation
 ``` C#
 public static int[] Rights(string s)
 {
@@ -126,4 +128,3 @@ public static int[] Rights(string s)
     return right;
 }
  ```
-This is **O**(***n***).

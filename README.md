@@ -73,7 +73,7 @@ public static int[] Rights(string s)
     return rights;
 }
 ```
-### Manacher's Algorithm
+### Manacher's Approach
 Manacher's insight was that a palindrome whose centre at ***i*** is *within* another palindrome centred at ***j*** will have a mirror palindrome reflected about ***j***.
 
 #### Example

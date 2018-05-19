@@ -15,9 +15,7 @@ A [palindrome](https://en.wikipedia.org/wiki/Palindrome) may be odd or even in l
 
 Let's define a unique index ***j*** for each possible palindrome in a string **S** with even length palindromes represented by even indices and odd length palindromes represented by odd indices. e.g. for a string of length 4 we have 9 indices:
 
-|   | S₀|   | S₁|   | S₂|   | S₃|   |
-|---|---|---|---|---|---|---|---|---|
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+![alt text](https://github.com/rbec/Palindromes/blob/master/example_indexes.PNG)
 
 And for a string of length ***n*** we have ***2n + 1*** indices.
 

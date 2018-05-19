@@ -32,7 +32,7 @@ It is useful to first understand a simpler algorithm that can be adapted to Mana
 ### Algorithm
 Given a string `s`:
 1. Initialise an array `right` of length `2*s.Length + 1`
-2. For each centre `i` from `1..2*s.Length`:
+2. For each centre `i` from `0` to `2*s.Length`:
    * Initialise our starting guess to `right[i] = (i + 1)/2` and `left = i - right[i]`
      * When `i` is even `left == right` giving a length of zero
      * When `i` is odd `left + 1 == right` giving a length of one

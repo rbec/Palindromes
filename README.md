@@ -32,8 +32,8 @@ Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so t
 Move through the centres from left to right. For each centre `i`:
 * Initialise the right-hand side to the minimum it can be: `right[i] = (i + 1)/2`
   * Then `left = i - right[i]`
-  * When `i` is odd `left == right` giving a length of zero
-  * When `i` is even `left + 1 == right` giving a length of one
+  * When `i` is even `left == right` giving a length of zero
+  * When `i` is odd `left + 1 == right` giving a length of one
 * Incrementally grow the palindrome using `left` and `right` to the maximum extent
 
 This is **O**(***n²***).

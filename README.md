@@ -6,28 +6,10 @@ An implementation of [Manacher algorithm](https://en.wikipedia.org/wiki/Longest_
 
 A [palindrome](https://en.wikipedia.org/wiki/Palindrome) may be odd or even in length.
 * Even length palindroms are centered *between* characters. e.g.
-
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example_even_length.PNG)
 
-| A |   | B |
-|---|---|---|
-|   | ↑ |   |
-
-| A |   | B |   | B |   | A |
-|---|---|---|---|---|---|---|
-|   |   |   | ↑ |   |   |   |
-
 * Odd length palindromes are centered *on* a character e.g.
-
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example_odd_length.PNG)
-
-| A |
-|---|
-| ↑ |
-
-| A |   | B |   | A |
-|---|---|---|---|---|
-|   |   | ↑ |   |   |
 
 Let's define a unique index ***j*** for each possible palindrome in a string **S** with even length palindromes represented by even indices and odd length palindromes represented by odd indices. e.g. for a string of length 4 we have 9 indices:
 

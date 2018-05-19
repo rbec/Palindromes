@@ -29,7 +29,7 @@ Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so t
 ## Simple Approach
 
 ### Algorithm
-For a string `s`:
+Given a string `s`:
 1. Initialise an array `right` of length `2*s.Length + 1`
 2. For each centre `i` from `1..2*s.Length`:
    * Initialise our starting guess to `right[i] = (i + 1)/2` and `left = i - right[i]`
@@ -74,7 +74,7 @@ It is possible that the palindrome extends further than it's mirror image, hence
 We therefore need to keep track of the right-most palindrome so far discovered.
 
 ### Algorithm
-For a string `s`:
+Given a string `s`:
 1. Initialise an array `right` of length `2*s.Length + 1`
 2. Initialise a variable `rightmost = 0` that is the centre of the palindrome with the right-most right-hand side so far discovered
 3. For each centre `i` from `1..2*s.Length`:

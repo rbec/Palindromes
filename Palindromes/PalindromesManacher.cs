@@ -27,7 +27,7 @@ namespace Palindromes
                     right[i] = Math.Min(right[rightmost], right[2 * rightmost - i] + i - rightmost);
                 }
                 else
-                    right[i] = i / 2; // we are outside the right most palindrome so start with immediate right
+                    right[i] = (i + 1) / 2; // we are outside the right most palindrome so start with immediate right
 
                 var left = i - right[i] - 1;
                 while (left >= 0 && right[i] < s.Length && s[left] == s[right[i]]) // grow the palindrome to the maximum extent

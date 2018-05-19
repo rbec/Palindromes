@@ -22,7 +22,7 @@ And for a string of length ***n*** we have ***2n + 1*** indices.
 The algorithm accepts a string of length ***n*** and returns an array of length ***2n + 1*** with the index ***i*** containing the right-hand side of the longest palindrome centered at ***i***.
 
 ### Example
-Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so the output will an array of 19 integers. The grey boxes in the grid below show the (longest) palindromes centered at each index (labelled blue). The three columns on the right show the range of the grey box as indices (0 - 8) in the original string shown in red at the top. The algorithm will output the *right (ex)* column of numbers. This is an exclusive bound since it makes the arithmetic slightly simpler.
+Consider the string `ABBBABBBB`. This has 9 characters so the output will an array of 19 integers. The grey boxes in the grid below show the (longest) palindromes centered at each index (labelled blue). The three columns on the right show the range of the grey box as indices (0 - 8) in the original string shown in red at the top. The algorithm will output the *right (ex)* column of numbers. This is an exclusive bound since it makes the arithmetic slightly simpler.
 
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example.PNG)
 

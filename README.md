@@ -79,7 +79,7 @@ Manacher's insight was that a palindrome whose centre at ***i*** is *within* ano
 #### Example
 Since the algorithm works left to right, by the time we reach ***i*** we know that we are within a palindrome centred at ***j*** and hence that there is a palindrome at *i* that has the same length as the one centred at ***2 j - i*** (the mirror image of ***i*** about axis ***j***).
 
-![alt text](https://github.com/rbec/Palindromes/blob/master/mirror_example.PNG)
+![alt text](https://github.com/rbec/Palindromes/blob/master/example_mirror.PNG)
 
 It is possible that the palindrome extends further than it's mirror image, hence as before we can grow the palindrome to it's maximum extent, but starting with a better initial guess.
 

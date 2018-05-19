@@ -98,9 +98,6 @@ For each centre `i` staring from zero:
 ``` C#
 public static int[] Rights(string s)
 {
-    if (s == null)
-        throw new ArgumentNullException(nameof(s));
-
     var right = new int[s.Length * 2 + 1];
 
     var rightmost = 0;

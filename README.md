@@ -4,7 +4,7 @@ An implementation of [Manacher algorithm](https://en.wikipedia.org/wiki/Longest_
 
 ## Introduction
 
-A palindrome may be odd or even in length.
+A [palindrome](https://en.wikipedia.org/wiki/Palindrome) may be odd or even in length.
 * Even length palindroms are centered *between* characters. e.g.
 
 | A |   | B |

@@ -48,7 +48,7 @@ Move through the centres from left to right. For each centre `i`:
   * When `i` is even `left + 1 == right` giving a length of one
 * Incrementally grow the palindrome using `left` and `right` to the maximum extent
 
-This is **O**(***n²***)
+This is **O**(***n²***).
 
 ``` C#
 public static int[] Rights(string s)
@@ -70,3 +70,5 @@ public static int[] Rights(string s)
     return rights;
 }
 ```
+### Manacher's Algorithm
+Manacher's insight was that a palindrom whose centre at *i* is *within* another palindrome centred at *j* will have a mirror palindrome reflected about *i*.

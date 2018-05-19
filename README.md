@@ -36,6 +36,15 @@ Move through the centres from left to right. For each centre `i`:
   * When `i` is odd `left + 1 == right` giving a length of one
 * Incrementally grow the palindrome using `left` and `right` to the maximum extent
 
+For a string `s`:
+1. Initialise an array `right` of length `2*s.Length + 1`
+2. For each centre `i` from `1..2*s.Length`:
+   * Initialise our starting guess to `right[i] = (i + 1)/2` and `left = i - right[i]`
+     * When `i` is even `left == right` giving a length of zero
+     * When `i` is odd `left + 1 == right` giving a length of one
+   * Incrementally grow the palindrome to the maximum extent
+3. Return `right`
+
 This is **O**(***n²***).
 
 ### Implementation
@@ -79,7 +88,7 @@ For a string `s`:
    * Initialise our starting guess:
      * If `i` is outside the right-most right-hand side (`2*i >= right[rightmost]`) we know nothing about any palindromes centred at `i` so use the simple algorithm `right[i] = (i + 1)/2`
      * Otherwise (`2*i < right[rightmost]`) we are inside a palindrome `Min(right[rightmost], right[2*rightmost - i] + i - rightmost)`
-   * As before, incrementally grow the palindrome to the maximum extent
+   * Incrementally grow the palindrome to the maximum extent
    * If this palindrome has a right-most extent is greater than the previous right-most palindrome, set `rightmost = i`
 4. Return `right`
 

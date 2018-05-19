@@ -73,9 +73,9 @@ We therefore need to keep track of the right-most palindrome so far discovered.
 
 ### Algorithm
 For a string `s`:
-1. Initialise an array `right` of length `2*s.Length + 1`
+1. Initialise an array `right` of length `2∙s.Length + 1`
 2. Initialise a variable `rightmost = 0` that is the centre of the palindrome with the right-most right-hand side so far discovered
-3. For each centre `i` from `1..2*s.Length`:
+3. For each centre `i` from `1..2∙s.Length`:
    * Initialise our starting guess:
      * If `i` is outside the right-most right-hand side (`2 * i >= right[rightmost]`) we know nothing about any palindromes centred at `i` so use the simple algorithm `right[i] = (i + 1)/2`
      * Otherwise (`2 * i < right[rightmost]`) we are inside a palindrome `Min(right[rightmost], right[2 * rightmost - i] + i - rightmost)`

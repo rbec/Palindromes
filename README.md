@@ -107,22 +107,20 @@ public static int[] Rights(string s)
     {
         if (i < 2 * right[rightmost])
         {
-            // we are inside the rightmost palindrome so reuse knowledge of the
-            // mirror palindrome about the centre of the rightmost palindrome
             right[i] = Math.Min(right[rightmost], right[2 * rightmost - i] + i - rightmost);
         }
         else
-            right[i] = (i + 1) / 2; // we are outside the right most palindrome so start with immediate right
+            right[i] = (i + 1) / 2;
 
         var left = i - right[i] - 1;
-        while (left >= 0 && right[i] < s.Length && s[left] == s[right[i]]) // grow the palindrome to the maximum extent
+        while (left >= 0 && right[i] < s.Length && s[left] == s[right[i]])
         {
             left--;
             right[i]++;
         }
 
         if (right[i] > right[rightmost])
-            rightmost = i; // we have found a new rightmost palindrome
+            rightmost = i;
     }
 
     return right;

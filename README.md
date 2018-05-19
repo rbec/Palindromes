@@ -27,6 +27,7 @@ Consider the algorithm run on the string `ABBBABBBB`. This has 9 characters so t
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example.PNG)
 
 ## Simple Approach
+It is useful to first understand a simpler algorithm that though minor modifications allows Manacher's approach.
 
 ### Algorithm
 Given a string `s`:

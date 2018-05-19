@@ -77,7 +77,7 @@ public static int[] Rights(string s)
 Manacher's insight was that a palindrome, whose centre at ***i*** is *within* another palindrome centred at ***j***, will have an identical mirror palindrome centred at ***i*** reflected about ***j***.
 
 #### Example
-Since the algorithm works left to right, by the time we reach ***i*** we know that we are within a palindrome centred at ***j*** and hence that there is a palindrome at *i* that has the same length as the one centred at ***2 j - i*** (the mirror image of ***i*** about axis ***j***).
+Since the algorithm works left to right, by the time we reach ***i*** we will know that we are within a palindrome centred at ***j*** and hence that there is a palindrome at ***i*** that has the same length as the one centred at ***2 j - i*** (the mirror image of ***i*** about ***j***).
 
 ![alt text](https://github.com/rbec/Palindromes/blob/master/example_mirror.PNG)
 

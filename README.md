@@ -52,7 +52,7 @@ Move through the centres from left to right. For each centre `i`:
 
 This is **O**(***n²***).
 
-### Implementation
+#### Implementation
 ``` C#
 public static int[] Rights(string s)
 {
@@ -94,7 +94,7 @@ For each centre `i` staring from zero:
 * As before, incrementally grow the palindrome using `left` and `right` to the maximum extent
 * If this palindrome has a right-most extent is greater than the previous right-most palindrome, set `rightmost = i`
 
-### Implementation
+#### Implementation
 ``` C#
 public static int[] Rights(string s)
 {

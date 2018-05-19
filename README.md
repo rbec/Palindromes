@@ -88,7 +88,10 @@ We therefore need to keep track of the right-most palindrome so far discovered.
 #### Algorithm
 Initialise a variable `rightmost` to zero that is the centre of the palindrome with the right-most extent so far discovered.
 For each centre `i` staring from zero:
-*  If `i` is outside the right-most right-hand side (`2 * i >= right[rightmost]`)
-  * We know nothing about any palindromes centred at `i` so use the simple algorithm `right[i] = (i + 1)/2`
-  * 
-* Incrementally grow the palindrome using `left` and `right` to the maximum extent
+* Initialise our starting guess:
+   * If `i` is outside the right-most right-hand side (`2 * i >= right[rightmost]`) we know nothing about any palindromes centred at `i` so use the simple algorithm `right[i] = (i + 1)/2`
+   * Otherwise (`2 * i < right[rightmost]`) we are inside a palindrome `Min(right[rightmost], right[2 * rightmost - i] + i - rightmost)`
+* As before, incrementally grow the palindrome using `left` and `right` to the maximum extent
+* If this palindrome has a right-most extent is greater than the previous right-most palindrome, set `rightmost = i`
+
+This is **O**(***n***).

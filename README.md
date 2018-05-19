@@ -36,7 +36,7 @@ And for a string of length ***n*** we have ***2n + 1*** indices.
 The algorithm accepts a string of length ***n*** and returns an array of length ***2n + 1*** with the index *j* containing the length of the palindrome centered at *j*.
 
 ### Example
-
+![alt text](https://github.com/rbec/Palindromes/blob/master/example.png "An example of the algorithm output")
 ``` C#
 public static int[] Rights(string s)
 {

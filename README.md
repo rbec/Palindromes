@@ -72,3 +72,5 @@ public static int[] Rights(string s)
 ```
 ### Manacher's Algorithm
 Manacher's insight was that a palindrom whose centre at *i* is *within* another palindrome centred at *j* will have a mirror palindrome reflected about *i*.
+
+Since the algorithm works left to right, by the time we reach *i* we know that we are within a palindrome centered at *j* and hence that there is a palindrome at *i* that has the same length as the one centered at *2 j - i* (the mirror image of *i* about *j*).
